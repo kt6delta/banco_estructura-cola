@@ -3,17 +3,18 @@ public class Cola{
   Scanner sc = new Scanner(System.in);
   Nodo first;
   Nodo last;
-
+  private int num_deal=4;
+  
   public Cola(){
     first= null;
     last= null;
   }
   
-  public void Insert(){
+  public void Insert(int id_client){
     Nodo new1= new Nodo();
-
+    new1.deal = (int)(Math.random()*8+1); //entre 1- 8 transacciones
+    new1.id_client=id_client;
     if(first == null){
-      new1.id_client=0;
       first= new1;
       last=new1;
       first.next=first;
@@ -23,7 +24,6 @@ public class Cola{
     new1.next= first;
     last= new1;
   }
-    System.out.println("\n Nodo ingresado");
   }
 
   public void DeployCola(){
@@ -31,7 +31,7 @@ public class Cola{
     Actual = first;
     if(first != null){
       do{
-        System.out.println(Actual.id_client);
+        System.out.println(Actual.id_client +" "+ Actual.deal);
         Actual= Actual.next;
       }while(Actual != first);
     }else{
@@ -69,19 +69,14 @@ public class Cola{
     Actual = first;
     boolean find = false;
     
-    System.out.println("Ingrese id del nodo a modificar");
-    int serch= sc.nextInt();
-    
     if(first != null){
       do{
-        if(Actual.id_client == serch){
-         System.out.println("\n nodo encontrado");
-          System.out.println("Nuevo dato para el nodo");
-          Actual.id_client =sc.nextInt();
+        if(Actual.deal > num_deal ){
+          Actual.deal=-num_deal;
           find = true;
         }
         Actual= Actual.next;
-      }while(Actual != first && find != true);
+      }while(Actual != first && find != true);//del resto basura
       if(!find){
         System.out.println("No encontrado");
       }
