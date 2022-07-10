@@ -85,19 +85,16 @@ public class Cola{
     }
   }
 
-  public void Delete(){
+   public void Delete(){
     Nodo Actual= new Nodo();
     Actual = first;
     Nodo Anterior = new Nodo();
     Anterior =null;
-    boolean find = false;
-
-    System.out.println("Ingrese el dato del nodo eliminar:");
-    int serch= sc.nextInt();
-
+    boolean find=false;
+    
     if(first != null){
       do{
-        if(Actual.id_client == serch){
+        if(Actual.deal <= num_deal){
          System.out.println("\n nodo encontrado");
           if(Actual== first){
             first= first.next;
@@ -111,10 +108,10 @@ public class Cola{
           System.out.println("nodo Eliminado");
           find = true;
         }
-        
         Anterior= Actual;
         Actual=Actual.next;
-      }while(Actual != first && find != true);
+      }while(Actual!= last);
+      
       if(!find){
         System.out.println("No encontrado");
       }
