@@ -51,6 +51,8 @@ public class Cola{
     Anterior =null;
     boolean find1=false;
     boolean find2=false;
+
+    this.DeployCola();
     
     if(first != null){
       do{        
