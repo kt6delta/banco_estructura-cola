@@ -49,14 +49,19 @@ public class Cola{
     Actual = first;
     Nodo Anterior = new Nodo();
     Anterior =null;
-    boolean find=false;
+    boolean find1=false;
+    boolean find2=false;
     
     if(first != null){
       do{        
         if(Actual.deal > num_deal ){ //-4 deals
           Actual.deal=Actual.deal-num_deal;
-           find = true;
+          find1 = true;
           System.out.println("nodo change");
+        }
+        if(find1){
+          this.DeployCola();
+          System.out.println("");
         }
         
         if(Actual.deal <= num_deal){ //delete
@@ -72,52 +77,21 @@ public class Cola{
             }
           }
           System.out.println("nodo Eliminado");
-          find = true;
+          find2 = true;
         }
+        if(find2){
+          this.DeployCola();
+          System.out.println("");
+        }
+        
         Anterior= Actual;
         Actual= Actual.next;
       }while(Actual!=last); 
-      if(!find){
+      if(!(find1 || find2)){
         System.out.println("Lista vacia");
       }
       
     }
   }
 
-
-   public void Delete(){
-    Nodo Actual= new Nodo();
-    Actual = first;
-    Nodo Anterior = new Nodo();
-    Anterior =null;
-    boolean find=false;
-    
-    if(first != null){
-      do{
-        if(Actual.deal <= num_deal){
-          if(Actual== first){
-            first= first.next;
-            last.next = first;            
-          }else{ if(Actual == last){
-            Anterior.next = first;
-            last = Anterior;            
-            }else{
-              Anterior.next = Actual.next;
-            }
-          }
-          System.out.println("nodo Eliminado");
-          find = true;
-        }
-        
-        Anterior= Actual;
-        Actual=Actual.next;
-      }while(Actual!= last);
-      
-      if(!find){
-        System.out.println("No encontrado");
-      }
-    }else{
-      System.out.println("Lista vacia");
-    }
-  }
 }

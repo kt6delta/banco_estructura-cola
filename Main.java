@@ -9,7 +9,6 @@ class Main {
     c.DeployCola();
     System.out.println("");
     c.Change();
-    c.DeployCola();
     
     /*
     System.out.println("");
