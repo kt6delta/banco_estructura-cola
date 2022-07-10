@@ -19,11 +19,11 @@ public class Cola{
       last=new1;
       first.next=first;
     }
-  else{
-    last.next=new1;
-    new1.next= first;
-    last= new1;
-  }
+    else{
+      last.next=new1;
+      new1.next= first;
+      last= new1;
+    }
   }
 
   public void DeployCola(){
@@ -32,6 +32,9 @@ public class Cola{
     if(first != null){
       do{
         System.out.println(Actual.id_client +" "+ Actual.deal);
+        try{
+        Thread.sleep(400);
+      }catch(InterruptedException e ) {}
         Actual= Actual.next;
       }while(Actual != first);
     }else{
