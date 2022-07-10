@@ -39,79 +39,68 @@ public class GUI extends JFrame{
     deal1.setBounds(245, 100, 50, 25);
     add(deal1);
     
-    id2=new JLabel("2");
+    id2=new JLabel("");
     id2.setBounds(170, 225,50,25);
     add(id2);
-    deal2=new JLabel("2");
+    deal2=new JLabel("");
     deal2.setBounds(170, 250,50,25);
     add(deal2);
     
-    id3=new JLabel("3");
+    id3=new JLabel("");
     id3.setBounds(245, 225,50,25);
     add(id3);
-    deal3=new JLabel("3");
+    deal3=new JLabel("");
     deal3.setBounds(245, 250,50,25);
     add(deal3);
     
-    id4=new JLabel("4");
+    id4=new JLabel("");
     id4.setBounds(320, 225,50,25);
     add(id4);
-    deal4=new JLabel("4");
+    deal4=new JLabel("");
     deal4.setBounds(320, 250,50,25);
     add(deal4);
 
-    id5=new JLabel("5");
+    id5=new JLabel("");
     id5.setBounds(170, 300,50,25);
     add(id5);
-    deal5=new JLabel("5");
+    deal5=new JLabel("");
     deal5.setBounds(170, 325,50,25);
     add(deal5);
     
-    id6=new JLabel("6");
+    id6=new JLabel("");
     id6.setBounds(245, 300,50,25);
     add(id6);
-    deal6=new JLabel("6");
+    deal6=new JLabel("");
     deal6.setBounds(245, 325,50,25);
     add(deal6);
     
-    id7=new JLabel("7");
+    id7=new JLabel("");
     id7.setBounds(320, 300,50,25);
     add(id7);
-    deal7=new JLabel("7");
+    deal7=new JLabel("");
     deal7.setBounds(320, 325,50,25);
     add(deal7);
     
-    id8=new JLabel("8");
+    id8=new JLabel("");
     id8.setBounds(170, 375,50,25);
     add(id8);
-    deal8=new JLabel("8");
+    deal8=new JLabel("");
     deal8.setBounds(170, 400,50,25);
     add(deal8);
     
-    id9=new JLabel("9");
+    id9=new JLabel("");
     id9.setBounds(245,375,50,25);
     add(id9);
-    deal9=new JLabel("9");
+    deal9=new JLabel("");
     deal9.setBounds(245,400,50,25);
     add(deal9);
     
-    id10=new JLabel("10");
+    id10=new JLabel("");
     id10.setBounds(320, 375,50,25);
     add(id10);
-    deal10=new JLabel("10");
+    deal10=new JLabel("");
     deal10.setBounds(320, 400,50,25);
     add(deal10);
-    
-    stop= new JButton("stop");
-    stop.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent arg0) {
-        Setstart(false);
-        repaint();
-      }
-    });
-    stop.setBounds(210, 450, 90, 30);
-    contentPane.add(stop);
-    
     }
   
   public void paint(Graphics g) {
@@ -136,24 +125,5 @@ public class GUI extends JFrame{
     g.drawOval (225, 400, 50, 50);//x,y 9
     g.drawOval (300, 400, 50, 50);//x,y 10
     }
-
-  public void Setstart(boolean start){
-    this.start=start;
-  }
-  public boolean  Getstart(){
-    return start;
-  }
-    public void SetIdClient(int idClient){
-    id1.setText(String.valueOf(idClient));
-  }
-  public int GetidClient(){
-    return idClient;
-  }
-  public void Setdeal(int deal){
-    this.deal=deal;
-  }
-  public int Getdeal(){
-    return deal;
-  }
 
 }

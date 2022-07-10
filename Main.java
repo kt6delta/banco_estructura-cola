@@ -1,18 +1,18 @@
-
 import java.awt.EventQueue;
 class Main {
   public static void main(String[] args) {
-    Cola i = new Cola();
-    for(int l=1; l<6 ; l++){//frame.Getstart()
-      i.Insert(l);
-   }
-    //System.out.println("Nodo ingresado");
-    i.DeployCola();
-    //i.Serch();
-    //i.Change();
-    //System.out.println("Nodo change");
-    //i.DeployCola();
-    //i.Delete();
-    //i.DeployCola();
+    Cola c = new Cola();
+    
+    //for(int i=0; i<4; i++){ 
+      int num= (int)(Math.random()*3+1);
+      for(int l=1; l<11 ; l++){
+        c.Insert(l);
+        try{
+          Thread.sleep(500);
+        }catch(InterruptedException e ) {}
+      }
+      c.DeployCola();
+    //}
+    
   }
 }
