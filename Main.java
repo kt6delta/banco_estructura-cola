@@ -2,22 +2,25 @@ class Main {
   public static void main(String[] args) {
     Cola c = new Cola();
     int l=1;
-    for(l=1; l<4; l++){
+    for(l=1; l<6; l++){//4
       c.Insert(l);
-      System.out.println(l);
       //c.DeployCola();
     }
+    c.DeployCola();
+    System.out.println("");
+    c.Change();
+    c.DeployCola();
     
+    /*
     System.out.println("");
     for(int i=1; true; i++){
       int num = (int)(Math.random()*4+2); //2-4
       for(int n=1; n<num; n++){
         c.Insert(l);
-        System.out.println(l);
         l++;
         //c.DeployCola();
       }
     }
-    
+   */ 
   }
 }
