@@ -49,8 +49,7 @@ public class Cola{
     Actual = first;
     Nodo Anterior = new Nodo();
     Anterior =null;
-    boolean find1=false;
-    boolean find2=false;
+    boolean find=false;
 
     this.DeployCola();
     
@@ -58,15 +57,10 @@ public class Cola{
       do{        
         if(Actual.deal > num_deal ){ //-4 deals
           Actual.deal=Actual.deal-num_deal;
-          find1 = true;
+          Actual=last;
+          find = true;
           System.out.println("repite");
-        }
-        if(find1){
-          this.DeployCola();
-          System.out.println("");
-        }
-        
-        if(Actual.deal <= num_deal){ //delete
+        }else{ //delete
           if(Actual== first){
             first= first.next;
             last.next = first;            
@@ -79,17 +73,15 @@ public class Cola{
             }
           }
           System.out.println("Eliminado");
-          find2 = true;
+          find = true;
         }
-        if(find2){
-          this.DeployCola();
-          System.out.println("");
-        }
+        this.DeployCola();
+        System.out.println("");
         
         Anterior= Actual;
         Actual= Actual.next;
       }while(Actual!=last); 
-      if(!(find1 || find2)){
+      if(!find){
         System.out.println("Cola vacia");
       }
       
