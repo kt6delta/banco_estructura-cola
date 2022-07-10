@@ -1,18 +1,20 @@
-import java.awt.EventQueue;
+
 class Main {
   public static void main(String[] args) {
-    Cola c = new Cola();
-    
-    //for(int i=0; i<4; i++){ 
-      int num= (int)(Math.random()*3+1);
-      for(int l=1; l<11 ; l++){
-        c.Insert(l);
-        try{
-          Thread.sleep(500);
-        }catch(InterruptedException e ) {}
-      }
-      c.DeployCola();
-    //}
+    Cola i = new Cola();
+    //colocar boton que devuelva bolean y colocar en l<=4
+    for(int l=1; l<=4; l++){
+      i.Insert(l);
+    }
+    System.out.println("Nodo ingresado");
+    i.DeployCola();
+    //i.Serch();
+    //i.Change();
+    //System.out.println("Nodo change");
+    //i.DeployCola();
+    i.Delete();
+    System.out.println("Nodo delete");
+    i.DeployCola();
     
   }
 }
