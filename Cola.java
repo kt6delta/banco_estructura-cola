@@ -33,7 +33,7 @@ public class Cola{
     Actual = first;
     if(first != null){
       do{
-        System.out.println(Actual.id_client +" "+ Actual.deal);
+        System.out.println("   "+Actual.id_client +"          "+Actual.deal);
         try{
         Thread.sleep(400);
       }catch(InterruptedException e ) {}
@@ -59,7 +59,7 @@ public class Cola{
         if(Actual.deal > num_deal ){ //-4 deals
           Actual.deal=Actual.deal-num_deal;
           find1 = true;
-          System.out.println("nodo change");
+          System.out.println("repite");
         }
         if(find1){
           this.DeployCola();
@@ -78,7 +78,7 @@ public class Cola{
               Anterior.next = Actual.next;
             }
           }
-          System.out.println("nodo Eliminado");
+          System.out.println("Eliminado");
           find2 = true;
         }
         if(find2){
@@ -90,7 +90,7 @@ public class Cola{
         Actual= Actual.next;
       }while(Actual!=last); 
       if(!(find1 || find2)){
-        System.out.println("Lista vacia");
+        System.out.println("Cola vacia");
       }
       
     }
