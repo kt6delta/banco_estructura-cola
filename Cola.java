@@ -3,18 +3,18 @@ public class Cola{
   Scanner sc = new Scanner(System.in);
   Nodo first;
   Nodo last;
-  private int num_deal=4;
+  private int num_deal=5;
   
   public Cola(){
     first= null;
     last= null;
   }
   
-  public void Insert(int id_client){
+  public void Insert(int id_client, int posicion){
     Nodo new1= new Nodo();
     new1.deal = (int)(Math.random()*8+1); //entre 1- 8 transacciones
     new1.id_client=id_client;
-    new1.posicion=id_client;
+    new1.posicion=posicion;
     
     if(first == null){ //crea
       first= new1;
@@ -28,12 +28,12 @@ public class Cola{
     }
   }
 
-  public void DeployCola(){
+  public void DeployCola(){//solo imprime
     Nodo Actual= new Nodo();
     Actual = first;
     if(first != null){
       do{
-        System.out.println("   "+Actual.id_client +"          "+Actual.deal);
+        System.out.println("   "+Actual.id_client +"          "+Actual.deal+"          "+Actual.posicion);
         try{
         Thread.sleep(400);
       }catch(InterruptedException e ) {}
@@ -44,20 +44,30 @@ public class Cola{
     }
   }
 
-  public void Change(){ // el ultimo se modifica a mano
-     Nodo Actual= new Nodo();
+    public void move(){ //-1 a todos
+    Nodo Actual= new Nodo();
+    Actual = first;
+    if(first != null){
+      do{
+        Actual.posicion--;
+        Actual= Actual.next;
+      }while(Actual != first);
+    }
+  }
+  
+  public void Change(){ //ultimo no se modifica
+    Nodo Actual= new Nodo();
     Actual = first;
     Nodo Anterior = new Nodo();
     Anterior =null;
     boolean find=false;
-
-    this.DeployCola();
     
-    if(first != null){
-      do{        
+    if(first != null){//si lista vacia
+      do{//recorre cola       
         if(Actual.deal > num_deal ){ //-4 deals
           Actual.deal=Actual.deal-num_deal;
-          Actual=last;
+          Actual.posicion=last.posicion+1;
+          last=Actual;
           find = true;
           System.out.println("repite");
         }else{ //delete
@@ -75,6 +85,7 @@ public class Cola{
           System.out.println("Eliminado");
           find = true;
         }
+        this.move();
         this.DeployCola();
         System.out.println("");
         
