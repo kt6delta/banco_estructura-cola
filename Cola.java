@@ -4,6 +4,8 @@ public class Cola{
   Nodo first;
   Nodo last;
   private int num_deal=5;
+  GUI n = new GUI();
+
   
   public Cola(){
     first= null;
@@ -34,6 +36,55 @@ public class Cola{
     if(first != null){
       do{
         System.out.println("   "+Actual.id_client +"          "+Actual.deal+"          "+Actual.posicion);
+
+      
+      
+      switch(Actual.posicion){
+      case 1:
+        n.id1.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal1.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 2:
+        n.id2.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal2.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 3:
+        n.id3.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal3.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 4:
+        n.id4.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal4.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 5:
+        n.id5.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal5.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 6:
+        n.id6.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal6.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 7:
+        n.id7.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal7.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 8:
+        n.id8.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal8.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+      case 9:
+        n.id9.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal9.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+       case 10:
+        n.id10.setText(String.valueOf("id:"+Actual.id_client));
+        n.deal10.setText(String.valueOf("tr:"+Actual.deal));
+        break;
+    }
+
+
+
+        
         try{
         Thread.sleep(400);
       }catch(InterruptedException e ) {}
