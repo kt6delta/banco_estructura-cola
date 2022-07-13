@@ -4,12 +4,13 @@ public class Cola{
   Nodo first;
   Nodo last;
   private int num_deal=5;
-  GUI n = new GUI();
+  GUI n;
 
   
   public Cola(){
     first= null;
     last= null;
+    n= new GUI();
   }
   
   public void Insert(int id_client, int posicion){
